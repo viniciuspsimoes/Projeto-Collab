@@ -72,18 +72,10 @@ A página de perfil representa o ambiente de um usuário autenticado no sistema.
 - [Visual Studio Code](https://code.visualstudio.com/)  
 - [Extensão Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
 
----
 
-## Contribuições
-
-Este projeto faz parte do desenvolvimento da plataforma **Collab**, criado como **atividade prática da disciplina Ferramentas Computacionais da Universidade de Pernambuco (UPE)**.
 
 
 
 ---
 
-
-Este projeto está licenciado sob os termos da **Licença MIT**.
-
----
 
