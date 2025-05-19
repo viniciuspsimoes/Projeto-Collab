@@ -1,0 +1,16 @@
+Comandos CURL disponíveis
+// CRIAR USUÁRIO
+curl -X POST http://localhost:3000/register ^
+  -H "Content-Type: application/json" ^
+  -d "{\"username\":\"usuario1\",\"password\":\"senha123\"}"
+
+// FAZER LOGIN
+curl -X POST http://localhost:3000/login ^
+  -H "Content-Type: application/json" ^
+  -d "{\"username\":\"usuario1\",\"password\":\"senha123\"}"
+
+// ACESSO A ROTA PROTEGIDA, CHECA SE A AUTENTICAÇÃO FUNCIONOU, EM <TOKEN_AQUI> DEVE SER COLOCADO O RETORNO DO COMANDO DE LOGIN.
+curl -X GET http://localhost:3000/protected ^
+  -H "Authorization: Bearer <TOKEN_AQUI>"
+
+Os próximos passos devem ser integrar a um banco de dados verdadeiro (MONGODB, MYSQL E ETC) e fazer testes reais
