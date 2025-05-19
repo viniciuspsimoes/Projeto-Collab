@@ -42,7 +42,7 @@ A página de perfil representa o ambiente de um usuário autenticado no sistema.
 
 > Recomendado rodar o projeto usando a extensão **Live Server** no **Visual Studio Code**.
 
-### 🛠 Passos:
+### Passos:
 
 1. Instale a extensão **Live Server** no VSCode  
 2. Abra a pasta `login/` no VSCode  
@@ -62,11 +62,8 @@ A página de perfil representa o ambiente de um usuário autenticado no sistema.
 | Sidebar de Configurações | Permite acessar opções como alterar email/senha, notificações, privacidade |
 | Login Social Simulado | Botões redirecionando para páginas de login do Facebook, Instagram e X/Twitter |
 
----
 
-## Exemplo Visual
 
-![Exemplo da interface de perfil do usuário](https://via.placeholder.com/900x400?text=Imagem+da+Interface+do+Perfil+COLLAB)
 
 ---
 
@@ -81,11 +78,10 @@ A página de perfil representa o ambiente de um usuário autenticado no sistema.
 
 Este projeto faz parte do desenvolvimento da plataforma **Collab**, criado como **atividade prática da disciplina Ferramentas Computacionais da Universidade de Pernambuco (UPE)**.
 
-Sugestões, melhorias e contribuições são bem-vindas!
+
 
 ---
 
-## Licença
 
 Este projeto está licenciado sob os termos da **Licença MIT**.
 
