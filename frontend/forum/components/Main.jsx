@@ -1,15 +1,17 @@
 import React from 'react'
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
+
 
 const Main = () => {
-  return <div className="main">
-
-        <div className='item-list'>
-            <div className='item-list__header'>
-                <h2>Posts</h2>
-            </div>
-        </div>
+  return (
+  <div className="post">
+      <div className="user-info">
+        <strong>Júlio Marques</strong> — Estudante de Engenharia
+        <button className="connect">Conectar</button>
+      </div>
+      <h4>Minha ideia</h4>
+      <p>Descrição da ideia aqui.</p>
     </div>
+  );
 };
 
 export default Main;
