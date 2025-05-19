@@ -12,8 +12,8 @@ Projeto da disciplina **Ferramentas Computacionais - UPE**.
 ## Equipe
 
 - **Design**: Carlos Amorim, Carlos Bezerra, Antônio Marinho
-- **Front-end**: Arthur Vinicios, Luana Oliveira, Allan Rubens, Gabriela Porto, Fernando Pereira
-- **Back-end**: Pedro Cerutti, Luiz Vieira, Vinicius Simões, João Gabriel, Juliano Paulo
+- **Front-end**: Arthur Vinicios, Luana Oliveira, Allan Rubens, Gabriela Porto, Vinicius Simões
+- **Back-end**: Pedro Cerutti, Luiz Vieira, Fernando Pereira, João Gabriel, Juliano Paulo
 
 ## Tecnologias
 
