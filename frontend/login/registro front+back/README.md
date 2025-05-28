@@ -1,4 +1,4 @@
-Este servidor autentica um usario cadastrado na pagina do registro, armazena o usuario, e autentica na pagina do login.
+Este servidor autentica um usuario cadastrado na pagina do registro, armazena o usuario, e autentica na pagina do login.
 
 Para rodar o codigo, precisa-se instalar o node.js e fazer o seguinte passo a passo no terminal:
 
