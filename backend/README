@@ -1,6 +1,10 @@
 Pra conseguir rodar tem que ter instalado o NODEJS: https://nodejs.org/en
 Depois abre o cmd e dá "npm install" pra pegar as bibliotecas, acessa o diretório em que está o server.js e roda a aplicação com "node server.js", pra usar os comandos CURL tem que ser em outra janela do terminal.
 
+Caso tenha problemas com o "npm install" tente usar esse comando dentro da pasta backend, onde o arquivo "Packages.Json" está.
+Use: cd <caminho para pasta backend>
+Exemplo: cd C:\Projeto-Collab-main\backend
+
 
 Comandos CURL disponíveis
 // CRIAR USUÁRIO
