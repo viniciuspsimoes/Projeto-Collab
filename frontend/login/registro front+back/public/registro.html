@@ -116,7 +116,7 @@
 
   form.onsubmit = async (e) => {
     e.preventDefault();
-    msg.textContent = "Carregando...";
+    msg.textContent = "Cadastrando...";
     const data = new FormData(form);
     const payload = {
       nome: data.get('nome'),
@@ -131,13 +131,18 @@
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
       });
-      const text = await res.text();
-      msg.style.color = res.ok ? "green" : "red";
-      msg.textContent = text;
-      if (res.ok) form.reset();
+
+      if (res.ok) {
+        // Cadastro OK - redireciona para login com parâmetro para exibir pop-up
+        window.location.href = '/login.html?registered=true';
+      } else {
+        const errorText = await res.text();
+        msg.style.color = 'red';
+        msg.textContent = errorText;
+      }
     } catch {
-      msg.style.color = "red";
-      msg.textContent = "Erro no servidor";
+      msg.style.color = 'red';
+      msg.textContent = 'Erro no servidor';
     }
   };
 </script>
