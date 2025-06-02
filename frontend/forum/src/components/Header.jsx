@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBell, faCircleUser } from "@fortawesome/free-solid-svg-icons";
-import NotificationPopup from "./NotificationPopup"; // certifique-se de que o caminho esteja correto
+import NotificationPopup from "./NotificationPopup";
+import logoImg from "../assets/logo/logo-collab.png"
 
 const Header = () => {
   const [showNotifications, setShowNotifications] = useState(false);
@@ -12,23 +13,31 @@ const Header = () => {
 
   return (
     <header className="header">
-      <div className="logo">
-        <a href="/">COLLAB</a>
-      </div>
+        <a href="/"><img src={logoImg} alt="Home" className="logo"/></a>
 
       <input type="text" placeholder="Pesquisar..." className="search" />
 
       <div className="icons">
         <FontAwesomeIcon
           icon={faBell}
-          style={{ color: "#ffffff", cursor: "pointer" }}
+          style={{ cursor: "pointer" }}
+          title="Ver notificações"
           onClick={togglePopup}
           className="notification-icon"
         />
-        <FontAwesomeIcon icon={faCircleUser} style={{ cursor: "pointer" }} />
+        <FontAwesomeIcon 
+          icon={faCircleUser} 
+          style={{ cursor: "pointer" }} 
+          title="Ver perfil"
+        />
 
-        {/* Janela flutuante */}
-        <NotificationPopup isVisible={showNotifications} />
+        {/* Pop-up de notificações comentado - necessita de ajustes... */}
+        {/*
+        <NotificationPopup 
+          isVisible={showNotifications} 
+        />
+        */}
+
       </div>
     </header>
   );
