@@ -6,7 +6,7 @@
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background-color: #f2f2f2;
+  background-color: #f0ebeb;
 }
 
 /* --- Padronizações --- */
@@ -22,35 +22,37 @@ a:visited {
 /* --- Header --- */
 .header {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
-  padding: 1rem 2rem;
-  background: linear-gradient(to right, navy, rgb(197, 9, 47));
-  color: white;
+  justify-content: center;
+  width: 100vw;
+  z-index: 105;
+  padding: 10px 15px;
+  background: linear-gradient(to right, #1e0066, #cc0033);
 }
 
 .logo {
-  font-size: 2.5rem;
-  font-weight: bold;
-  text-decoration: none;
+  width: 120px;
+  height: auto;
 }
 
 .search {
-  width: 30%;
-  padding: 0.7rem;
+  width: 20%;
+  padding: 0.6rem 1rem;
   border-radius: 15px;
   border: none;
 }
 
 .icons {
-  font-size: 2rem;
+  font-size: 2.5rem;
   display: flex;
-  align-items: center;
-  gap: 15px;
+  margin-left: 20px;
+  gap: 12px;
+  color: white
 }
 
 
-/* --- Layout Principal --- */
+/* --- Main Layout --- */
 .app {
   display: flex;
   flex-direction: column;
@@ -58,104 +60,34 @@ a:visited {
 
 .main-layout {
   display: flex;
-  padding: 2rem;
-  gap: 7rem;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;             
+  padding: 10px;
 }
 
 .content {
-  flex: 1;
+  min-height: 100vh;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1rem;
 }
 
-.post {
-  flex: 1;
-}
-
-/* --- Sidebar Esquerda --- */
-.sidebar-left {
-  background: white;
-  padding: 1rem;
-  border-radius: 10px;
-  height: fit-content;
-  width: 200px;
-}
-
-.tags {
-  margin-top: 1rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.tags:hover {
-  text-decoration: underline;
-}
-
-.tag {
-  background-color: #eee;
-  padding: 0.4rem 0.6rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
-}
-
-.trending-button:hover {
-  text-decoration: underline;
-}
-
-.new-button:hover {
-  text-decoration: underline;
-}
-
-/* --- Sidebar Direita --- */
-.sidebar-right {
-  background: white;
-  padding: 1rem;
-  border-radius: 10px;
-  height: fit-content;
-  width: 200px;
-}
-
-.online {
-  margin-bottom: 1.5rem;
-}
-
-.online h4 {
-  color: #3f51b5;
-  margin-bottom: 0.5rem;
-}
-
-.online ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.online li {
-  margin-bottom: 0.3rem;
-}
-
-.more-investors:hover {
-  text-decoration: underline;
-}
-
-.more-members:hover {
-  text-decoration: underline;
-}
-
-/* --- Criador de Post --- */
 .post-creator {
   background: rgb(19, 28, 150);
-  padding: 25px;
+  padding: 20px;
   border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
   color: white;
-  margin-bottom: 2rem;
+  margin-bottom: 15px;
 
 }
 
 .post-creator textarea,
 .post-creator input {
  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
+  padding: 8px;
+  margin-bottom: 10px;
   border: none;
   border-radius: 5px;
   resize: none;
@@ -177,19 +109,88 @@ a:visited {
   cursor: pointer;
 }
 
-/* --- Postagens --- */
 .post {
-  background: white;
-  padding: 1rem;
+ background: rgb(255, 255, 255);
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
   border-radius: 10px;
-  margin-bottom: 1rem;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.post-status {
+  background: rgb(24, 201, 8);
+  border: none;
+  color: white;
+  padding: 0.3rem 0.6rem;
+  font-size: 14px;
+  border-radius: 12px;
+  margin-left: 15px;
+}
+
+.post-interactions {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  font-size: 20px;
+  transition: background-color 0.5s;
+}
+
+.like:hover {
+  color: rgb(165, 0, 0);
+}
+.comment:hover {
+  color: rgb(19, 28, 150);
+}
+.colab:hover {
+  color: rgb(165, 0, 0);
+}
+.bookmark:hover {
+  color: rgb(19, 28, 150);
+}
+
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.ptag {
+  background-color: #edf2f7;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  transition: background-color 0.3s;
+}
+
+.ptag:hover {
+    background: linear-gradient(to top, rgb(187, 101, 101), rgb(136, 136, 211));
+    color: white;
+    cursor: pointer;
 }
 
 .user-info {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 0.5rem;
+}
+
+.user-icon {
+  font-size: 30px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.user-description {
+  justify-content: left;
+}
+
+.user-role {
+  font-size: 14px;
+  color: #555;
+}
+
+.username:hover {
+  color: rgb(19, 28, 150);
+  cursor: pointer;
 }
 
 .connect {
@@ -197,8 +198,181 @@ a:visited {
   border: none;
   color: white;
   padding: 0.3rem 0.6rem;
-  border-radius: 6px;
+  border-radius: 7px;
   cursor: pointer;
+  transition: background-color 0.3s;
+  margin-left: 15px;
+}
+
+.connect:hover {
+  background: rgb(15, 15, 160);
+}
+
+/* --- Sidebar Esquerda --- */
+.left-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar-left-preview {
+  background-color: #fff;
+  padding: 0.5rem;
+  border-radius: 10px;
+  width: 250px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.profile-preview {
+  position: relative;
+  background-color: white;
+  border-radius: 10px;
+  overflow: visible;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.banner {
+  height: 80px;
+  background-color: rgb(165, 0, 0);
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.profile-picture {
+  width: 50px;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid white;
+  position: absolute;
+  top: -50px;
+  background-color: white;
+}
+
+.role, .location, .institution {
+  font-size: 0.85rem;
+  color: #555;
+  margin: 2px 0;
+}
+
+.mini-icons {
+  font-size: 14px;
+  margin-right: 3px;
+}
+
+.tools-card {
+  background-color: #fff;
+  padding: 0.5rem;
+  border-radius: 10px;
+  width: 250px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  
+}
+
+.nav-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  height: auto;
+}
+
+.nav-item {
+  background-color: #f3f4f6;
+  padding: 0.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #111;
+  font-weight: 900;
+  transition: background-color 0.3s;
+}
+
+.item-icons {
+  margin-right: 3px;
+}
+
+.nav-item:hover {
+  background-color: rgb(23, 39, 190);
+  color: white;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tools-card h3{
+  margin-bottom: 0;
+  margin-right: 5px;
+}
+
+.tag {
+  background-color: #edf2f7;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+}
+
+.tag:hover {
+  background: linear-gradient(to top, rgb(187, 101, 101), rgb(136, 136, 211));
+  color: white;
+  cursor: pointer;
+}
+
+/* --- Sidebar Direita --- */
+.sidebar-right {
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  padding: 15px;
+  border-radius: 10px;
+  height: auto;
+  width: 250px;
+}
+
+.online {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.online h3 {
+  color: #1d0892;
+  margin-bottom: 10px;
+}
+
+.names {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.name-items:hover {
+  color: #1d0892;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.on-indicator {
+  font-size: 12px;
+  margin-right: 3px;
+}
+
+.more-members {
+  font-weight: bold;
+}
+
+.more-members:hover {
+  text-decoration: underline;
+  color: #1e0066;
 }
 
 /*-- Notifications --*/
@@ -229,3 +403,4 @@ a:visited {
   margin-bottom: 8px;
   font-size: 14px;
 }
+
