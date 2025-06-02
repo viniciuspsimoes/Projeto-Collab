@@ -1,31 +1,28 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircle } from '@fortawesome/free-solid-svg-icons';
 
 export default function SidebarRight() {
+  const members = ['José Augusto', 'André Marques', 'Fernanda Torres', 'Miguel Arraes', 'Juliana Ferraz', 'Sabrina Motta', 'Paulo Fernando', 'Gutto Baliotelli'];
+
   return (
     <aside className="sidebar-right">
       <div className="online">
-        <h4>Membros on-line</h4>
-        <ul>
-          <li>Severino</li>
-          <li>Sebastião</li>
-          <li>Alan Brasil</li>
-          <li>...</li>
-        </ul>
-      </div>
+        <h3>Parceiros online</h3>
+          <div className="names">
+            {members.map((name, i) => (
+            <span key={i} className="name-items">
+              <FontAwesomeIcon 
+              icon={faCircle} 
+              style={{color: '#00a832',}}
+              className='on-indicator'
+              />{name}</span>
+            ))}
+          </div>
+
       <div className='more-members'>
         <a href="/">Ver mais...</a>
       </div>
-      <div className="online investors">
-        <h4>Investidores on-line</h4>
-        <ul>
-          <li>Júlio César</li>
-          <li>Maquiavel</li>
-          <li>Sartre</li>
-          <li>...</li>
-        </ul>
-      </div>
-      <div className='more-investors'>
-        <a href="/">Ver mais...</a>
       </div>
     </aside>
   );

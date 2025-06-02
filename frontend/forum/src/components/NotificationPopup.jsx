@@ -1,3 +1,5 @@
+// pop-up de notificações
+// por ora sem funcionar
 import React from 'react'
 
 function NotificationPopup({isVisible}) {
