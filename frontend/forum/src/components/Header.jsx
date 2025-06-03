@@ -25,11 +25,13 @@ const Header = () => {
           onClick={togglePopup}
           className="notification-icon"
         />
-        <FontAwesomeIcon 
-          icon={faCircleUser} 
-          style={{ cursor: "pointer" }} 
-          title="Ver perfil"
-        />
+        <a href="/perfil.html">
+          <FontAwesomeIcon 
+            icon={faCircleUser} 
+            style={{ cursor: "pointer" }} 
+            title="Ver perfil"
+          />
+        </a>
 
         {/* Pop-up de notificações comentado - necessita de ajustes... */}
         {/*
