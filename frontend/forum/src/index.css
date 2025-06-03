@@ -22,9 +22,10 @@ a:visited {
 /* --- Header --- */
 .header {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   width: 100vw;
   z-index: 105;
   padding: 0 30px;
@@ -32,13 +33,13 @@ a:visited {
 }
 
 .logo {
-  height: 80px; 
+  height: 100px; 
   cursor: pointer;
 }
 
 .search {
   width: 20%;
-  height: 5%;
+  height: auto;
   padding: 0.6rem 1rem;
   border-radius: 15px;
   border: none;

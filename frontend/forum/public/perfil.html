@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/png" href="../public/logoaba.png" />
+  <link rel="icon" type="image/png" href="/logoaba.png" />
   <title>Perfil - COLLAB</title>
   <style>
     body {
@@ -34,6 +34,14 @@
       color: white;
       cursor: pointer;
       position: relative;
+    }
+
+    .searchbar {
+      width: 20%;
+      height: 5%;
+      padding: 0.6rem 1rem;
+      border-radius: 15px;
+      border: none;
     }
 
     /* Conteúdo do perfil */
@@ -191,8 +199,10 @@
 
   <div class="header">
     <a href="/">
-      <img class="logo" src="../public/logo-collab.png" alt="COLLAB Logo" />
+      <img class="logo" src="/logo-collab.png" alt="COLLAB Logo" />
     </a>
+  <input type="text" class="searchbar" placeholder="Pesquisar..." />
+
     <div class="icons">
       <i id="bellIcon" class="fas fa-bell" title="Notificações"></i>
       <i id="gearIcon" class="fas fa-cog" title="Configurações"></i>
