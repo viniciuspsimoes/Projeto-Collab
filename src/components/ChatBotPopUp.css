@@ -1,0 +1,76 @@
+.chatbot-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.chatbot-popup {
+  background-color: #0b3d91; /* azul */
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  width: 400px;            /* largura fixa */
+  max-height: 450px;       /* altura máxima */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;        /* evita overflow geral */
+}
+
+.chatbot-popup textarea {
+  background-color: #154fca;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  resize: none;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.chatbot-popup button {
+  background-color: #06327e;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.chatbot-popup button:disabled {
+  background-color: #3a5fba;
+  cursor: not-allowed;
+}
+
+.resposta-area {
+  background-color: white;
+  color: black;
+  padding: 0.75rem;
+  border-radius: 4px;
+  max-height: 250px;       /* limita a altura da resposta */
+  width: 100%;             /* largura total do popup */
+  overflow-y: auto;        /* barra de rolagem vertical */
+  overflow-wrap: break-word; /* quebra palavras longas */
+  word-break: break-word;  /* quebra palavras longas */
+  white-space: pre-wrap;   /* mantém quebras de linha */
+  box-sizing: border-box;
+}
+
+/* Botão fechar no canto superior direito */
+.close-btn {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+}
