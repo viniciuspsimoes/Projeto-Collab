@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cadastro - COLLAB</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; background: #faf6f6; }
+    .top-banner {
+      background: linear-gradient(to right, #660000, #001f3f);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 250px;
+    }
+    .top-banner img { height: 300px; }
+
+    .login-container {
+      max-width: 350px;
+      background: #fff;
+      margin: 60px auto 0;
+      padding: 40px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-radius: 8px;
+    }
+
+    .login-container h2 {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .input-field {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 12px;
+      background-color: #660000;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 4px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    .login-btn:hover { background-color: #8a0000; }
+
+    .signup {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .signup a {
+      color: #053769;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .footer {
+      margin-top: 40px;
+      text-align: center;
+      color: #888;
+    }
+
+    .footer i {
+      font-size: 24px;
+      margin: 0 10px;
+      cursor: pointer;
+    }
+
+    .msg {
+      text-align: center;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="top-banner">
+  <img src="logo-collab.png" alt="COLLAB Logo">
+</div>
+
+<div class="login-container">
+  <h2>Cadastre-se</h2>
+  <form id="register-form">
+    <input class="input-field" name="nome" type="text" placeholder="Nome completo" required>
+    <input class="input-field" name="username" type="text" placeholder="Nome de usuário" required>
+    <input class="input-field" name="email" type="email" placeholder="E-mail" required>
+    <input class="input-field" name="password" type="password" placeholder="Senha" required>
+    <button class="login-btn" type="submit">Cadastrar</button>
+    <div class="msg" id="register-msg"></div>
+  </form>
+
+  <div class="signup">
+    Já tem conta? <a href="login.html">Entrar</a>
+  </div>
+</div>
+
+<div class="footer">
+  <i class="fab fa-facebook"></i>
+  <i class="fab fa-instagram"></i>
+  <i class="fab fa-x-twitter"></i>
+</div>
+
+<script>
+  const form = document.getElementById('register-form');
+  const msg = document.getElementById('register-msg');
+
+  form.onsubmit = async (e) => {
+    e.preventDefault();
+    msg.textContent = "Cadastrando...";
+    const data = new FormData(form);
+    const payload = {
+      nome: data.get('nome'),
+      username: data.get('username'),
+      email: data.get('email'),
+      password: data.get('password')
+    };
+
+    try {
+      const res = await fetch('/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      if (res.ok) {
+        // Cadastro OK - redireciona para login com parâmetro para exibir pop-up
+        window.location.href = '/login.html?registered=true';
+      } else {
+        const errorText = await res.text();
+        msg.style.color = 'red';
+        msg.textContent = errorText;
+      }
+    } catch {
+      msg.style.color = 'red';
+      msg.textContent = 'Erro no servidor';
+    }
+  };
+</script>
+
+</body>
+</html>
