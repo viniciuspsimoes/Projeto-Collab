@@ -1,11 +1,14 @@
 /* --- Reset básico --- */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  max-width: 100%;
+  font-family: 'Inter';
   background-color: #f0ebeb;
 }
 
@@ -23,10 +26,9 @@ a:visited {
 .header {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  width: 100vw;
+  width: 100%;
   z-index: 105;
   padding: 0 30px;
   background: linear-gradient(to right, #1e0066, #cc0033);
@@ -77,11 +79,15 @@ a:visited {
 
 .post-creator {
   background: rgb(19, 28, 150);
-  padding: 20px;
+  padding: 15px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.05);
   color: white;
   margin-bottom: 15px;
+}
+
+.post-creator-title {
+  margin-bottom: 10px;
 
 }
 

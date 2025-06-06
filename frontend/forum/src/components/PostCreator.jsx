@@ -7,7 +7,7 @@ export default function PostCreator() {
 
   return (
     <div className="post-creator">
-      <h2>Faça uma postagem</h2>
+      <h2 className='post-creator-title'>Faça uma postagem</h2>
       <textarea placeholder="Descreva sua ideia..." />
       <input type="text" placeholder="Coloque suas #tags aqui, separadas por vírgula..." />
       <div className="buttons">

@@ -34,7 +34,7 @@ export default function ChatBotPopUp({ onClose }) {
 
   return (
     <div className="chatbot-popup">
-      <button className="close-btn" onClick={onClose}>×</button>
+      <button className="close-btn" onClick={onClose}>x</button>
       <textarea
         placeholder="Digite sua pergunta..."
         value={pergunta}
