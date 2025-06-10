@@ -7,6 +7,7 @@ import PostCreator from './components/PostCreator';
 import Post from './components/Main.jsx';
 import BrowseTools from './components/BrowseTools.jsx';
 import Filter from './components/Filter.jsx';
+import MessageDropdown from './components/MessageDropdown.jsx';
 
 function App() {
   return (
@@ -21,7 +22,10 @@ function App() {
           <PostCreator />
           <Post />
         </main>
-        <SidebarRight />
+        <div className='right-items'>
+          <SidebarRight />
+          <MessageDropdown />
+        </div>
       </div>
     </div>
   );
