@@ -45,8 +45,10 @@ Este projeto é uma aplicação web simples para cadastro e login de usuários, 
    ```bash
    npm install
    npm start
-
    acessar:
 
    http://localhost:3000/login.html
    http://localhost:3000/registro.html
+
+## Adicionado Planilha Google na nuvem Google Drive com dados cadastrados em registro.html
+link para planilha: https://docs.google.com/spreadsheets/d/1vwc_9eFfNBkIAWzwYxISq9G3zVpSngFa-l6NHTwyL_0/edit?usp=sharing
