@@ -1,36 +1,44 @@
 const express = require('express');
 const path = require('path');
+const fetch = require('node-fetch'); // Instale com: npm install node-fetch
 const app = express();
+const cors = require('cors');
+
+const allowedOrigins = ['http://localhost:5500', 'http://127.0.0.1:5500'];
+
+//app.use(cors());  permite todas origens
+app.use(cors({
+  origin: function(origin, callback) {
+    // Permite requisições sem origem (ex: Postman) e as da lista
+    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Origem não permitida pelo CORS'));
+    }
+  }
+}));
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-let users = [];
+// Proxy para o Google Apps Script
+app.post('/register', async (req, res) => {
+  try {
+    const querystring = new URLSearchParams(req.body).toString();
+    const response = await fetch('https://script.google.com/macros/s/AKfycbz76StN77DbB80sxZrQRQQZFgTia5SrkLpnEdLXMaL9RpYlyV-GFCtkSSmttn-iFl1x/exec', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: querystring
+    });
 
-app.post('/register', (req, res) => {
-  const { nome, username, email, password } = req.body;
-  if (!nome || !username || !email || !password) {
-    return res.status(400).send('Todos os campos são obrigatórios.');
+    const text = await response.text();
+    res.send(text); // responde de volta ao navegador
+  } catch (err) {
+    console.error('Erro no proxy:', err);
+    res.status(500).send('Erro no servidor proxy.');
   }
-  const userExists = users.find(u => u.username === username || u.email === email);
-  if (userExists) {
-    return res.status(400).send('Usuário ou email já existe.');
-  }
-  users.push({ nome, username, email, password });
-  res.send('Registro realizado com sucesso!');
-});
-
-app.post('/login', (req, res) => {
-  const { username, password } = req.body;
-  if(!username || !password) {
-    return res.status(400).send('Usuário e senha são obrigatórios.');
-  }
-  const user = users.find(u => (u.username === username || u.email === username) && u.password === password);
-  if(!user) {
-    return res.status(400).send('Usuário ou senha inválidos.');
-  }
-  res.send(`Bem-vindo, ${user.nome}!`);
 });
 
 const PORT = 3000;
