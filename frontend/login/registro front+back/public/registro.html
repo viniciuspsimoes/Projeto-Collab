@@ -115,37 +115,41 @@
   const msg = document.getElementById('register-msg');
 
   form.onsubmit = async (e) => {
-    e.preventDefault();
-    msg.textContent = "Cadastrando...";
-    const data = new FormData(form);
-    const payload = {
-      nome: data.get('nome'),
-      username: data.get('username'),
-      email: data.get('email'),
-      password: data.get('password')
-    };
+  e.preventDefault();
+  msg.style.color = 'black';
+  msg.textContent = "Cadastrando...";
 
-    try {
-      const res = await fetch('/register', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      });
+  const formData = new FormData(form);
+  const urlEncoded = new URLSearchParams(formData); // converte para formato esperado
 
-      if (res.ok) {
-        // Cadastro OK - redireciona para login com parâmetro para exibir pop-up
-        window.location.href = '/login.html?registered=true';
-      } else {
-        const errorText = await res.text();
-        msg.style.color = 'red';
-        msg.textContent = errorText;
-      }
-    } catch {
+  try {
+    const res = await fetch('http://localhost:3000/register', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      body: urlEncoded
+    });
+
+    const text = await res.text();
+
+    if (res.ok) {
+      msg.style.color = 'green';
+      msg.textContent = "Cadastro realizado com sucesso!";
+      form.reset();
+    } else {
       msg.style.color = 'red';
-      msg.textContent = 'Erro no servidor';
+      msg.textContent = 'Erro ao cadastrar: ' + text;
     }
-  };
+  } catch (error) {
+    msg.style.color = 'red';
+    msg.textContent = 'Erro no servidor: ' + error.message;
+    console.error('Erro detalhado:', error);
+  }
+};
 </script>
+
+
 
 </body>
 </html>
