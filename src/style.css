@@ -1,0 +1,273 @@
+body { margin: 0; font-family: Arial, sans-serif; background: #faf6f6; }
+.top-banner {
+  background: linear-gradient(to right, #660000, #001f3f);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+}
+.top-banner img { height: 300px; }
+
+.login-container {
+  max-width: 350px;
+  background: #fff;
+  margin: 60px auto 0;
+  padding: 40px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+.login-container h2 {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #001f3f; /* Azul escuro Collab */
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  background-color: #003366;
+}
+
+.register-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #8a0000; /* vermelho */
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.register-btn:hover {
+  background-color: #660000;
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 0.9em;
+}
+
+.links a {
+  color: #3a86ff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.links a:hover { color: #053769; }
+
+.social-login {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 40px;
+}
+
+.social-button {
+  flex: 1;
+  max-width: 180px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #fff;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.social-button img { height: 20px; margin-right: 8px; }
+.social-button:hover { background-color: #f0f0f0; }
+
+.signup {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.signup a {
+  color: #8a0000;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.signup a:hover { color: #053769; }
+
+
+.footer {
+  margin-top: 40px;
+  text-align: center;
+  color: #888;
+}
+
+.footer i {
+  font-size: 24px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.msg {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* Popup de sucesso ou erro */
+.popup {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 14px;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  opacity: 0;
+  animation: fadeInOut 3s ease-in-out forwards;
+}
+.popup.success { background-color: #28a745; }
+.popup.error { background-color: #dc3545; }
+
+.forgot-password {
+  margin-top: 10px;
+  text-align: left;
+}
+
+.forgot-password a {
+  color: #3a86ff;
+  text-decoration: none;
+  font-size: 0.9em;
+  transition: color 0.3s ease;
+}
+
+.forgot-password a:hover {
+  color: #053769;
+}
+
+/* Seção de login social */
+.social-login {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 30px;
+  align-items: center;
+}
+
+.social-login p {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+
+/* Botão do Google */
+.google-btn {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: white;
+  font-weight: bold;
+  color: #444;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.google-btn:hover {
+  background-color: #f0f0f0;
+}
+
+/* Botão do Facebook */
+.facebook-btn {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #3b5998;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.facebook-btn:hover {
+  background-color: #2d4373;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateX(-50%) translateY(-10px); }
+  10% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  90% { opacity: 1; }
+  100% { opacity: 0; transform: translateX(-50%) translateY(-10px); }
+}
+
+/* Título centralizado nas páginas de primeiro acesso */
+.login-container h2 {
+  text-align: left;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+/* Estilo adicional para selects */
+.input-field select,
+select.input-field {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: white;
+  font-family: Arial, sans-serif;
+}
+
+/* Botão pular */
+.skip-btn {
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.skip-btn button {
+  background: transparent;
+  border: none;
+  color: #3a86ff;
+  font-weight: bold;
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.skip-btn button:hover {
+  color: #053769;
+}
